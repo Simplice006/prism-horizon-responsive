@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prism Horizon — Contact</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <h1>Prism Horizon</h1>
+        <p>Photography &amp; web development, built around a black-and-gold identity.</p>
+
+        <nav class="site-nav" aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Our Services</a></li>
+                <li><a href="contact.html" aria-current="page">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contact-main">
+        <h2>Get in Touch</h2>
+        <p>
+            Have a question, or a photography or web project in mind? Fill in
+            the form below and we'll get back to you quickly.
+        </p>
+
+        <section class="contact-form" aria-labelledby="form-heading">
+            <h3 id="form-heading">Contact form</h3>
+
+            <form action="#" method="post">
+                <p>
+                    <label for="name">Full name</label><br>
+                    <input type="text" id="name" name="name" required>
+                </p>
+
+                <p>
+                    <label for="email">Email address</label><br>
+                    <input type="email" id="email" name="email" required>
+                </p>
+
+                <p>
+                    <label for="subject">Subject</label><br>
+                    <select id="subject" name="subject">
+                        <option value="photography">Photo shoot</option>
+                        <option value="web">Web project</option>
+                        <option value="other">Other enquiry</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="message">Your message</label><br>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </p>
+
+                <p>
+                    <button type="submit">Send message</button>
+                </p>
+            </form>
+        </section>
+
+        <aside aria-labelledby="other-heading">
+            <h3 id="other-heading">Other ways to reach us</h3>
+            <p>Based in Mukono, Uganda.</p>
+            <p>We usually reply within 48 hours.</p>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Prism Horizon. All rights reserved.</p>
+        <p>Mukono, Uganda</p>
+    </footer>
+
+</body>
+</html>

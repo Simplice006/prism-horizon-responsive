@@ -1,0 +1,213 @@
+/* ===========================================
+   Prism Horizon — main stylesheet
+   Mobile-first approach: base styles target
+   small screens, then media queries enhance
+   the layout for wider viewports.
+   =========================================== */
+
+:root {
+    --color-bg: #0a0a0a;
+    --color-surface: #161616;
+    --color-text: #f2f2f2;
+    --color-muted: #b9b9b9;
+    --color-gold: #d4af37;
+    --space-sm: 0.75rem;
+    --space-md: 1.25rem;
+    --space-lg: 2.5rem;
+}
+
+/* --- Base --- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+}
+
+a {
+    color: var(--color-gold);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--color-gold);
+    outline-offset: 2px;
+}
+
+/* --- Header and navigation (mobile first: stacked) --- */
+.site-header {
+    padding: var(--space-md);
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.site-header p {
+    color: var(--color-muted);
+    margin-top: 0;
+}
+
+.site-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.site-nav a {
+    display: block;
+    padding: var(--space-sm);
+    text-decoration: none;
+    border: 1px solid #2a2a2a;
+    border-radius: 4px;
+}
+
+.site-nav a[aria-current="page"] {
+    border-color: var(--color-gold);
+    color: var(--color-gold);
+}
+
+/* --- Main content --- */
+main {
+    padding: var(--space-md);
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+section {
+    margin-bottom: var(--space-lg);
+}
+
+article {
+    background-color: var(--color-surface);
+    padding: var(--space-md);
+    border-radius: 6px;
+    margin-bottom: var(--space-md);
+}
+
+aside {
+    background-color: var(--color-surface);
+    padding: var(--space-md);
+    border-left: 3px solid var(--color-gold);
+    border-radius: 4px;
+}
+
+/* --- Grid/flex layout for related groups --- */
+.apropos,
+.contact-main .contact-form,
+.contact-main aside {
+    display: block;
+}
+
+.service-group {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+}
+
+/* --- Form --- */
+form p {
+    margin-bottom: var(--space-md);
+}
+
+label {
+    display: block;
+    margin-bottom: 0.35rem;
+    color: var(--color-muted);
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: var(--space-sm);
+    background-color: var(--color-surface);
+    border: 1px solid #333;
+    border-radius: 4px;
+    color: var(--color-text);
+    font-size: 1rem;
+}
+
+button {
+    background-color: var(--color-gold);
+    color: #0a0a0a;
+    border: none;
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* --- Footer --- */
+footer {
+    padding: var(--space-md);
+    text-align: center;
+    color: var(--color-muted);
+    border-top: 1px solid #2a2a2a;
+}
+
+/* ===========================================
+   Wider screens (tablet and desktop)
+   =========================================== */
+@media (min-width: 600px) {
+    .service-group {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 768px) {
+    .site-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: var(--space-md) var(--space-lg);
+    }
+
+    .site-nav ul {
+        flex-direction: row;
+    }
+
+    .apropos {
+        display: flex;
+        gap: var(--space-lg);
+        align-items: flex-start;
+    }
+
+    .apropos article {
+        flex: 2;
+    }
+
+    .apropos aside {
+        flex: 1;
+    }
+
+    .contact-main {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: var(--space-lg);
+        align-items: start;
+    }
+}
+
+@media (min-width: 1024px) {
+    main {
+        padding: var(--space-lg);
+    }
+}
